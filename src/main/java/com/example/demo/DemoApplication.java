@@ -15,13 +15,13 @@ public class DemoApplication {
 
 	public static void main(String[] args) {
 
-		BinarySearchImpl binarySearch = new BinarySearchImpl(new BubbleSortAlgorithm());
+		BinarySearchImpl binarySearch = new BinarySearchImpl(new QuickSortAlgorithm());
 		int answer =
 		binarySearch.binarySearch(new int[] {1,2}, 2);
 
 		System.out.println(answer);
 
-		SpringApplication.run(DemoApplication.class, args);
+		//SpringApplication.run(DemoApplication.class, args);
 	}
 
 }
