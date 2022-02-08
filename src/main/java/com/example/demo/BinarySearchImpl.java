@@ -2,6 +2,7 @@ package com.example.demo;
 
 public class BinarySearchImpl {
 
+    //this is dependency of BinarySearch
     private SortAlgorithm sortAlgorithm;
 
     public BinarySearchImpl(SortAlgorithm sortAlgorithm) {
