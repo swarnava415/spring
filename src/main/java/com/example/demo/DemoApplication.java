@@ -2,6 +2,7 @@ package com.example.demo;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.ApplicationContext;
 
 @SpringBootApplication
 public class DemoApplication {
@@ -24,13 +25,16 @@ public class DemoApplication {
 
 	public static void main(String[] args) {
 
-		BinarySearchImpl binarySearch = new BinarySearchImpl(new QuickSortAlgorithm());
-		int answer =
-		binarySearch.binarySearch(new int[] {1,2}, 2);
+		ApplicationContext applicationContext =
+		SpringApplication.run(DemoApplication.class, args);
+
+		BinarySearchImpl binarySearchBean = applicationContext.getBean(BinarySearchImpl.class);
+		//BinarySearchImpl binarySearch = new BinarySearchImpl(new BubbleSortAlgorithm());
+		int answer = binarySearchBean.binarySearch(new int[] {1,2}, 2);
 
 		System.out.println(answer);
 
-		//SpringApplication.run(DemoApplication.class, args);
+
 	}
 
 }
